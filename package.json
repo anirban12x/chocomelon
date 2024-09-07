@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "private": false,
   "dependencies": {
+    "reactstrap": "^9.0.1",
+    "remixicon": "^2.5.0",
     "@babel/preset-react": "^7.16.7",
     "@chainlink/contracts": "^0.4.0",
     "@nomiclabs/hardhat-ethers": "^2.0.5",
@@ -26,7 +28,9 @@
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "react-icons": "4.4.0",
+    "swiper": "^8.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -53,6 +57,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11"
+    "@babel/preset-env": "^7.16.11",
+    "tailwindcss": "^3.4.10"
   }
 }

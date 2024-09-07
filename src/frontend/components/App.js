@@ -16,6 +16,10 @@ import { useState } from 'react'
 import { ethers } from "ethers"
 import { Spinner } from 'react-bootstrap'
 
+import Navbar from '../container/Navbar/Navbar.jsx'
+import Footer from '../container/Footer/Footer.jsx'
+import Landing from "./Landing.jsx";
+
 import './App.css';
 
 function App() {
@@ -56,13 +60,15 @@ function App() {
       <div className="App">
         <>
           <Navigation web3Handler={web3Handler} account={account} />
+          <Navbar/>
         </>
         <div>
           {loading ? (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
-              <Spinner animation="border" style={{ display: 'flex' }} />
-              <p className='mx-3 my-0'>Awaiting Metamask Connection...</p>
-            </div>
+            // <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
+            //   <Spinner animation="border" style={{ display: 'flex' }} />
+            //   <p className='mx-3 my-0'>Awaiting Metamask Connection...</p>
+            // </div>
+            <Landing/>
           ) : (
             <Routes>
               <Route path="/" element={
