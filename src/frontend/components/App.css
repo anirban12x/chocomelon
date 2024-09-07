@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,113 @@
   to {
     transform: rotate(360deg);
   }
+} */
+@import url('https://fonts.googleapis.com/css2?family=Della+Respira&display=swap');
+
+.section__padding {
+  padding: 2rem 4rem;
 }
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p__font1 {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  color: #565656;
+}
+.h1__font2 {
+  font-family: var(--font-base2);
+  font-weight: var(--font-weight-bold);
+}
+.h2__font1 {
+  font-family: var(--font-base);
+  font-size: 20px;
+  font-weight: 600;
+  transition: all ease 0.5s;
+}
+
+.boxname {
+  font-family: var(--font-base);
+  font-size: 30px;
+  font-weight: 600;
+  color: #ff5e00;
+  transition: all ease 0.5s;
+}
+.button_1 {
+  font-family: var(--font-base);
+  color: #fff;
+  background: var(--color-purple);
+  padding: 15px 30px;
+  font-size: 14px;
+  border: 2px solid var(--color-purple);
+  outline: none;
+  cursor: pointer;
+  border-radius: 30px;
+  margin: 0 10px;
+  transition: all ease 0.5s;
+}
+.button_1:hover {
+  background: none;
+  color: var(--color-purple);
+}
+.button_2 {
+  font-family: var(--font-base);
+  color: var(--color-purple);
+  background: none;
+  padding: 15px 30px;
+  font-size: 14px;
+  border: 2px solid var(--color-purple);
+  outline: none;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all ease 0.5s;
+}
+.button_2:hover {
+  color: #fff;
+  background: var(--color-purple);
+}
+
+.button_3 {
+  font-family: var(--font-base);
+  color: var(--color-purple);
+  background: none;
+  border: 2px solid var(--color-purple);
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 40px auto 0 auto;
+  transition: all ease 0.5s;
+}
+.button_3:hover {
+  color: #fff;
+  background: var(--color-purple);
+}
+.Bharat{
+  font-family: "Della Respira", serif;
+  font-weight: 700;
+  color: #ff6601;
+}
+
+@media screen and (max-width: 450px) {
+  .section__padding {
+    padding: 4rem 2rem;
+  }
+  .branding{
+    font-size: 1rem;
+    padding: 0 40px;
+    max-width: 100%;
+    h1{
+      font-size: 2.4rem;
+    }
+    p{
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+

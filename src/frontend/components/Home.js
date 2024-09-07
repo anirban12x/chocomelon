@@ -2,6 +2,11 @@ import { useState, useEffect } from 'react'
 import { ethers } from "ethers"
 import { Row, Col, Card, Button } from 'react-bootstrap'
 
+import Top from './Top/Top.jsx'
+import Collection from './Collection/Collection.jsx'
+import icon from '../asset/eth4 - Copy (2).png'
+import './Discover.css'
+
 const IPFS_GATEWAY = "https://ipfs.io/ipfs/";
 
 const Home = ({ marketplace, nft }) => {
@@ -66,39 +71,72 @@ const Home = ({ marketplace, nft }) => {
   )
 
   return (
-    <div className="flex justify-center">
+    <>
+    <Top/>
+    <Collection/>
+    <div className='app__discover section__padding'>
+      <div className="app__discover-head">
+        <h1 className='h1__font2 w-max border-b-4 border-b-orange-400 pb-2'>DISCOVER MORE PRODUCTS</h1>
+      </div>
+      <div className="app__discover-content">
       {items.length > 0 ?
         <div className="px-5 container">
-          <Row xs={1} md={2} lg={4} className="g-4 py-5">
+          <Row xs={1} md={2} lg={4} className="g-4 py-3 w-full">
             {items.map((item, idx) => (
-              <Col key={idx} className="overflow-hidden">
-                <Card>
-                  <Card.Img variant="top" src={item.image} />
-                  <Card.Body color="secondary">
-                    <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>
-                      {item.description}
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <div className='d-grid'>
-                      <Button onClick={() => buyMarketItem(item)} variant="primary" size="lg">
-                        Buy for {ethers.utils.formatEther(item.totalPrice)} ETH
-                      </Button>
-                    </div>
-                  </Card.Footer>
-                </Card>
-              </Col>
+
+              <div className='app__discover_card' key={idx}>
+    <div className="app__discover_card_head">
+      <img className='nft__images' src={item.image} alt="NFT Images" />
+    </div>
+    <div className="app__discover_card_description">
+      <h1 className='h2__font1'>{item.name}</h1>
+      <p className='p__font1 text-lg'>{item.description}</p>
+      <div className='description_bid mt-2'>
+        <div className='bid'>
+          <img src={icon} alt="Etherum Icon" />
+          <p className='p__font1'>{ethers.utils.formatEther(item.totalPrice)}</p>
+        </div>
+      </div>
+    </div>
+    <div className='app__discover_card_times'>
+      <a href="#">
+        <btn onClick={() => buyMarketItem(item)}>Buy Now</btn>
+      </a>
+    </div>
+  </div>
             ))}
           </Row>
         </div>
         : (
-          <main style={{ padding: "1rem 0" }}>
+          <main className='w-full text-center py-12 my-12'>
             <h2>No listed assets</h2>
           </main>
         )}
+      </div>
+      <div className="app__discover-button">
+      </div>
     </div>
+    </>
   );
 }
 
 export default Home
+
+              // <Col key={idx} className="overflow-hidden">
+              //   <Card>
+              //     <Card.Img variant="top" src={item.image} />
+              //     <Card.Body color="secondary">
+              //       <Card.Title>{item.name}</Card.Title>
+              //       <Card.Text>
+              //         {item.description}
+              //       </Card.Text>
+              //     </Card.Body>
+              //     <Card.Footer>
+              //       <div className='d-grid'>
+              //         <Button onClick={() => buyMarketItem(item)} variant="primary" size="lg">
+              //           Buy for {ethers.utils.formatEther(item.totalPrice)} ETH
+              //         </Button>
+              //       </div>
+              //     </Card.Footer>
+              //   </Card>
+              // </Col>

@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 4.5px;
+  color: #ff6100;
+  transition: all .4s ease;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6100;
+  border-radius: 4px;
+  width: 4.5px;
+  transition: all .4s ease;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-radius: 4px;
+  width: 4px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* @font-face {
+  font-family: "IntegralCF-Bold";
+  src: local("IntegralCF-Bold"),
+  url("./fonts/integral/IntegralCF-Bold.otf") format("opentype");
+  font-weight: bold;
+  }
+   */
+
+
+:root {
+  --font-base : 'DM Sans', sans-serif ;
+  --font-base2 : 'Poppins', sans-serif;
+  --font-weight-bold: 700;
+  --color-purple : #ff6100 ;
+  --color-brown  : #565656 ;
+  width: 100%;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.560, 0.450,0.940) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.slide-top {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.940, 0.450, 0.560, 0.250) both;
+  animation: slide-top 0.5s cubic-bezier(0.940, 0.450, 0.560, 0.250) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+}

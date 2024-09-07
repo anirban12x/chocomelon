@@ -58,29 +58,38 @@ export default function MyPurchases({ marketplace, nft, account }) {
   )
 
   return (
-    <div className="flex justify-center">
+    <>
       {purchases.length > 0 ?
-        <div className="px-5 container">
-          <Row xs={1} md={2} lg={4} className="g-4 py-5">
-            {purchases.map((item, idx) => (
-              <Col key={idx} className="overflow-hidden">
-                <Card>
-                  <Card.Img variant="top" src={item.image} />
-                  <Card.Body>
-                    <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>{item.description}</Card.Text>
-                  </Card.Body>
-                  <Card.Footer>{ethers.utils.formatEther(item.totalPrice)} ETH</Card.Footer>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+        <div className='app__discover section__padding'>
+           <div className="app__discover-head">
+        <h1 className='h1__font2 w-max border-b-4 border-b-orange-400 pb-2'>My Purchases</h1>
+      </div>
+          <div className='app__discover-content'>
+            <div className="px-5 container">
+              <Row xs={1} md={2} lg={4} className="g-4 py-5">
+                {purchases.map((item, idx) => (
+                  <Col key={idx} className="overflow-hidden">
+                    <Card>
+                      <Card.Img variant="top" src={item.image} />
+                      <Card.Body>
+                        <Card.Title>{item.name}</Card.Title>
+                        <Card.Text>{item.description}</Card.Text>
+                      </Card.Body>
+                      <Card.Footer>{ethers.utils.formatEther(item.totalPrice)} ETH</Card.Footer>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </div>
         </div>
         : (
-          <main style={{ padding: "1rem 0" }}>
-            <h2>No purchases</h2>
-          </main>
+          <div className='app__discover section__padding'>
+          <div className="app__discover-content">
+          <main className='w-full text-center py-12 my-12'>
+            <h2>No purchases made yet</h2>
+          </main></div></div>
         )}
-    </div>
+    </>
   );
 }
